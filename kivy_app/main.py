@@ -17,11 +17,27 @@ class MainLayout(BoxLayout):
         btn_hello.bind(on_press=self.show_hello)
         self.add_widget(btn_hello)
 
+        btn_bye = Button(
+            text="Click để tạm biệt",
+            size_hint=(None, None),
+            size=(200, 80),
+            pos_hint={'center_x': 0.5}
+        )
+        btn_bye.bind(on_press=self.show_bye)
+        self.add_widget(btn_bye)
 
     def show_hello(self, instance):
         popup = Popup(
             title="Message",
             content=Label(text="xin chào"),
+            size_hint=(0.6, 0.4)
+        )
+        popup.open()
+
+    def show_bye(self, instance):
+        popup = Popup(
+            title="Message",
+            content=Label(text="tạm biệt"),
             size_hint=(0.6, 0.4)
         )
         popup.open()
